@@ -41,6 +41,12 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+/*
+	* Make theme available for translation.
+	* Translations can be filed in the /languages/ directory.
+	*/
+load_theme_textdomain( 'mas', get_template_directory() . '/languages' );
+
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
