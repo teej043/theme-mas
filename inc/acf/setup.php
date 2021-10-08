@@ -41,6 +41,7 @@ function mas_acf_init() {
 		include get_template_directory() . '/inc/blocks/featured.php';
 		include get_template_directory() . '/inc/blocks/hero.php';
 		include get_template_directory() . '/inc/blocks/teaser.php';
+    include get_template_directory() . '/inc/blocks/showcase.php';
 }
 
 
@@ -51,6 +52,7 @@ function mas_allowed_block_types( $allowed_blocks ) {
     'acf/featured',
 		'acf/hero',
 		'acf/teaser',
+    'acf/showcase',
     'core/block',
     //'acf/relateditems',
 	);

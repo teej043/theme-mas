@@ -29,6 +29,14 @@ Steps to do first right after you clone this from the repo.
 
 `bin/` and `tests/` ... basically don't worry about (or remove) these unless you know what they are and want to.
 
+`composer.json` and `package.json` are files that store the information of all the dependencies this project are using. In particular, the `package.json` also holds the scripts definitions for Patternlab related tasks.
+
+`gulpfile.js` holds the task runners for watching source files and transforming them to static assets.
+
+`alter-twig.php` a Patternlab specific php file that allows you to put custom functions or filters to the Twig templating engine that Patternlab is using.
+
+`*.php` these other php files on the root folder are Wordpress templates, but with Timber we only use them merely as controllers that handles data and just pass these data as `$context` variable to Twig renderers.
+
 ### What is Patternlab?
 
 Patternlab provides an environment (using the Twig templating engine) to help you build, test and showcase the design components and styling you develop for the theme. It has a local development host that shows it's own frontend ui that you can view in your browser, it updates itself for every modifications you make on your views (.twig) files.

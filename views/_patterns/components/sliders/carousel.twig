@@ -1,0 +1,13 @@
+<div class="carousel splide">
+  <div class="splide__track">
+		<ul class="carousel__items splide__list">
+			{% for slide in slides %}
+			<li class="carousel__item splide__slide splide__slide--{{ loop.index }}">
+        {% block slidecontent %}
+          {% include '@components/cards/card.twig' with slide %}
+        {% endblock %}
+      </li>
+      {% endfor %}
+		</ul>
+  </div>
+</div>

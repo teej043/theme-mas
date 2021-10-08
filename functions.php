@@ -38,6 +38,9 @@ if ( ! class_exists( 'Timber' ) ) {
 			return get_stylesheet_directory() . '/assets/no-timber.html';
 		}
 	);
+
+
+
 	return;
 }
 
@@ -186,3 +189,15 @@ function prefix_nav_menu_classes($items, $menu, $args) {
     return $items;
 }
 add_filter( 'wp_get_nav_menu_items', 'prefix_nav_menu_classes', 10, 3 );
+
+
+
+
+add_filter('timber/loader/loader', function($loader){
+	$loader->addPath(__DIR__ . "/views/_patterns/components", "components");
+	$loader->addPath(__DIR__ . "/views/_patterns/blocks", "blocks");
+	$loader->addPath(__DIR__ . "/views/_patterns/elements", "elements");
+	$loader->addPath(__DIR__ . "/views/_patterns/templates", "templates");
+	$loader->addPath(__DIR__ . "/views/_patterns/pages", "pages");
+	return $loader;
+});
