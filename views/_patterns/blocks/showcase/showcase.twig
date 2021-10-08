@@ -1,6 +1,6 @@
 <section class="block block--showcase">
   <div class="block__inner">
-  {{ dump(fields) }}
+  {{ fields|json_encode }}
     {% if fields.slides %}
     {% include '@components/sliders/carousel.twig' with { 'slides' : fields.slides } %}
     {% endif %}
