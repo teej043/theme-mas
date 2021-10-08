@@ -1,0 +1,7 @@
+vendor
+wp-content
+node_modules
+pattern_exports
+public
+tests
+composer.lock

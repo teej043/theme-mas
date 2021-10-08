@@ -1,0 +1,14 @@
+{
+  "id" : "teaser01",
+  "type" : "teaser",
+  "fields" : {
+    "title" : "Teaser title",
+    "desc" : "Teaser description texts",
+    "image" : {
+      "sizes" : {
+        "medium" : "https://via.placeholder.com/350x250"
+      }
+    }
+  }
+}
+

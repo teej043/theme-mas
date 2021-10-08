@@ -1,0 +1,17 @@
+{% extends "@templates/base.twig" %}
+
+{% block content %}
+    {# Start Block Loader #}
+    {% for module in modules %}
+        {% if module.type == "article" %}
+            {% include "@blocks/article/article.twig" with module only %}
+        {% elseif module.type == "featured" %}
+            {% include "@blocks/featured/featured.twig" with module only %}
+        {% elseif module.type == "teaser" %}
+            {% include "@blocks/teaser/teaser.twig" with module only %}
+        {% elseif module.type == "hero" %}
+            {% include "@blocks/hero/hero.twig" with module only %}
+        {% endif %}
+    {% endfor %}
+    {# End Block Loader #}
+{% endblock %}

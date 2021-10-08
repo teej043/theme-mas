@@ -1,0 +1,8 @@
+.block--article {
+  background-color: green;
+}
+
+.edit-post-visual-editor .is_preview {
+  display: none !important;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJsb2Nrcy9hcnRpY2xlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTs7O0FBSUE7RUFDRSIsImZpbGUiOiJibG9ja3MvYXJ0aWNsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmxvY2stLWFydGljbGUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGdyZWVuO1xyXG59XHJcblxyXG4uZWRpdC1wb3N0LXZpc3VhbC1lZGl0b3Ige1xyXG4gIC5pc19wcmV2aWV3IHtcclxuICAgIGRpc3BsYXk6IG5vbmUhaW1wb3J0YW50O1xyXG4gIH1cclxufSJdfQ== */

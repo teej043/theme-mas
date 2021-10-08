@@ -1,0 +1,73 @@
+{
+   "mainmenu" : [
+      {
+         "ID" : 10,
+         "url" : "https://example.com",
+         "title" : "Frontpage",
+         "target" : "",
+         "attr_title" : "",
+         "classes" : [
+            "",
+            "menu-item",
+            "menu-item-type-post_type",
+            "menu-item-object-page",
+            "menu-item-home"
+         ],
+         "menu_item_parent" : 0,
+         "current" : false
+      },
+      {
+         "ID" : 11,
+         "url" : "https://test.com",
+         "title" : "About",
+         "target" : "",
+         "attr_title" : "",
+         "classes" : [
+            "",
+            "menu-item",
+            "menu-item-type-post_type",
+            "menu-item-object-page",
+            "current-menu-ancestor",
+            "current-menu-parent",
+            "current-page_parent",
+            "current-page_ancestor"
+         ],
+         "menu_item_parent" : 0,
+         "current" : false
+      },
+      {
+         "ID" : 111,
+         "url" : "https://test.com",
+         "title" : "Contact",
+         "target" : "",
+         "attr_title" : "",
+         "classes" : [
+            "",
+            "menu-item",
+            "menu-item-type-post_type",
+            "menu-item-object-page",
+            "current-menu-item",
+            "page_item",
+            "page-item-111",
+            "current_page_item"
+         ],
+         "menu_item_parent" : "11",
+         "current" : true
+      },
+      {
+         "ID" : 112,
+         "url" : "https://test.test",
+         "title" : "Jobs",
+         "target" : "",
+         "attr_title" : "",
+         "classes" : [
+            "",
+            "menu-item",
+            "menu-item-type-post_type",
+            "menu-item-object-page"
+         ],
+         "menu_item_parent" : "11",
+         "current" : false
+      }
+   ]
+}

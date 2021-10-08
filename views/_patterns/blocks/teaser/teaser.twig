@@ -1,0 +1,48 @@
+{#
+/**
+ * Block Name: teaser block
+ *
+ * This is the template that displays the teaser block.
+ */
+#}
+
+
+{% if is_preview %}
+<section id="example-{{ block.id }}" class="block block--teaser is_preview">
+    <div class="block__inner">
+        <div class="teaser">
+            {% if block.example.attributes.data.image %}
+            <picture class="teaser__image">
+                <!--[if IE 9]><video style="display: none;><![endif]-->
+                <source srcset="{{ block.example.attributes.data.image.sizes.medium }}" />
+                <img src="" class="lazyload" alt="{{ block.example.attributes.data.image.alt }}" />
+            </picture>
+            {% endif %}
+            
+            <article class="teaser__texts">
+                <header><h1>{{ block.example.attributes.data.title }}</h1></header>
+                {{ block.example.attributes.data.desc }}
+            </article>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+<section id="b-{{ id }}" class="block block--teaser">
+    <div class="block__inner">
+        <div class="teaser">
+            {% if fields.image %}
+            <picture class="teaser__image">
+                <!--[if IE 9]><video style="display: none;><![endif]-->
+                <source srcset="{{  fields.image.sizes.medium }}" />
+                <img src="" class="lazyload" alt="{{  fields.image.alt }}" />
+            </picture>
+            {% endif %}
+            <article class="teaser__texts">
+                <header><h1>{{  fields.title }}</h1></header>
+                {{  fields.desc }}
+            </article>
+        </div>
+    </div>
+</section>

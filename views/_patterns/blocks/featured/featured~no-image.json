@@ -1,0 +1,23 @@
+{
+  "id" : "featured011",
+  "type" : "featured",
+  "fields" : {
+    "items" : [
+      {
+        "title" : "Item 1",
+        "desc" : "Item 1 description texts",
+        "image" : null
+      },
+      {
+        "title" : "Item 2",
+        "desc" : "Item 2 description texts",
+        "image" : null
+      },
+      {
+        "title" : "Item 3",
+        "desc" : "Item 3 description texts",
+        "image" : null
+      }
+    ]
+  }
+}

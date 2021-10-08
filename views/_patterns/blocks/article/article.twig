@@ -1,0 +1,23 @@
+{#
+/**
+ * Block Name: Article block
+ *
+ * This is the template that displays the article block.
+ */
+#}
+
+{% if is_preview %}
+    <section id="b-{{ block.id }}" class="block block--article is_preview">
+        <article>
+            <h2>Preview</h2>
+            {{ block.example.attributes.data.content }}
+        </article>
+    </section>
+{% endif %}
+
+
+<section id="b-{{ id }}" class="block block--article">
+    <article>
+        {{ fields.content }}
+    </article>
+</section>

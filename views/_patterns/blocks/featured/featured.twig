@@ -1,0 +1,49 @@
+{#
+/**
+ * Block Name: Article block
+ *
+ * This is the template that displays the article block.
+ */
+#}
+
+{% if is_preview %}
+    <section class="block block--featured is_preview">
+        <div class="block__inner">
+            <div class="featured__items">
+                {% for item in block.example.attributes.data.items %}
+                    <div class="featured__item">
+                        <header><h3>{{ item.title }}</h3></header>
+                        <article>{{ item.desc }}</article>
+                        {% if item.image %}
+                        <picture>
+                            <!--[if IE 9]><video style="display: none;><![endif]-->
+                            <source srcset="{{ item.image.sizes.medium }}" />
+                            <img src="" class="lazyload" alt="{{ item.image.alt }}" />
+                        </picture>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+<section id="b-{{ id }}" class="block block--featured">
+    <div class="block__inner">
+        <div class="featured__items">
+            {% for item in fields.items %}
+                <div class="featured__item">
+                    <header><h3>{{ item.title }}</h3></header>
+                    <article>{{ item.desc }}</article>
+                    {% if item.image %}
+                    <picture>
+                        <!--[if IE 9]><video style="display: none;><![endif]-->
+                        <source srcset="{{ item.image.sizes.medium }}" />
+                        <img src="" class="lazyload" alt="{{ item.image.alt }}" />
+                    </picture>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

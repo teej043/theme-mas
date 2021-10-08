@@ -1,0 +1,16 @@
+.block--teaser {
+  background-color: blueviolet;
+}
+
+.teaser {
+  display: flex;
+  flex-direction: row;
+}
+
+.teaser__image {
+  width: 200px;
+}
+
+.teaser__texts {
+
+}

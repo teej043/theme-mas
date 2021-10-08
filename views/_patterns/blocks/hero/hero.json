@@ -1,0 +1,13 @@
+{
+  "id" : "hero01",
+  "type" : "hero",
+  "fields" : {
+    "title" : "A Hero Title",
+    "desc" : "A descriptive texts",
+    "image" : {
+      "sizes" : {
+        "medium" : "https://via.placeholder.com/1920x1080"
+      }
+    }
+  }
+}

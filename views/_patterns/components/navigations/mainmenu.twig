@@ -1,0 +1,37 @@
+{% if mainmenu %}
+	<ul>
+	{% for item in mainmenu %}
+		{% if item.menu_item_parent == 0 %}
+
+			{% set par = item.ID %}
+			{% set arr = [] %}
+			{% set is_par = false %}
+
+			{% for submenu in mainmenu %}
+				{% if submenu.menu_item_parent == par %}
+					{% set is_par = true %}
+					{% set arr = arr|merge([submenu]) %}
+				{% endif %}
+			{% endfor %}
+
+			{% if (is_par == true) %}
+				<li class="{{ item.classes|join(' ') }}">
+					<a href="{{ item.url }}">{{ item.title}}</a>
+					<ul>
+					{% for subitem in arr %}
+						<li class="{{ subitem.classes|join(' ') }}">
+							<a href="{{ subitem.url }}">{{ subitem.title }}</a>
+						</li>
+					{% endfor %}
+					</ul>
+				</li>
+			{% else %}
+				<li class="{{ item.classes|join(' ') }}">
+					<a href="{{ item.url }}">{{ item.title}}</a>
+				</li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	</ul>
+{% endif %}
+

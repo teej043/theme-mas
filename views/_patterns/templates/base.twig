@@ -1,0 +1,12 @@
+<div class="page" id="page">
+    <header>
+        {% block header %}
+            {% include "@blocks/global/header.twig" %}
+        {% endblock %}
+    </header>
+    <main role="main">
+        {% block title %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main><!--End role=main-->
+    {% include "@blocks/global/footer.twig" %}
+</div>

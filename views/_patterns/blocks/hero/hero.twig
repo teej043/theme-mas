@@ -1,0 +1,46 @@
+{#
+/**
+ * Block Name: Hero block
+ *
+ * This is the template that displays the hero block.
+ */
+#}
+
+
+{% if is_preview %}
+<section id="example-{{ block.id }}" class="block block--hero is_preview">
+    <div class="block__inner">
+        <div class="hero">
+            <div class="banner">
+                {% if block.example.attributes.data.image %}
+                <picture>
+                    <!--[if IE 9]><video style="display: none;><![endif]-->
+                    <source srcset="{{ block.example.attributes.data.image.sizes.medium }}" />
+                    <img src="" class="lazyload" alt="{{ block.example.attributes.data.image.alt }}" />
+                </picture>
+                {% endif %}
+                <header><h1>{{ block.example.attributes.data.title }}</h1></header>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+
+<section id="b-{{ id }}" class="block block--hero">
+    <div class="block__inner">
+        <div class="hero">
+            <div class="banner">
+                {% if fields.image %}
+                <picture class="banner__image">
+                    <!--[if IE 9]><video style="display: none;><![endif]-->
+                    <source srcset="{{ fields.image.sizes.medium }}" />
+                    <img src="" class="lazyload" alt="{{ fields.image.alt }}" />
+                </picture>
+                {% endif %}
+                <header class="banner__texts"><h1>{{ fields.title }}</h1></header>
+            </div>
+        </div>
+    </div>
+</section>

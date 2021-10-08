@@ -1,0 +1,27 @@
+
+{
+	"title" : "About This Patternlab Styleguide",
+	"bodyClass": "home",
+  "modules" : [
+    {
+      "id" : "module001",
+      "type" : "article",
+      "fields" : {
+        "content" : "<h1>About This Patternlab Styleguide</h1><h2>This is a testing ground for mastering the use of Patternlab</h2>"
+      }
+    },
+    {
+      "id" : "module002",
+      "type" : "teaser",
+      "fields" : {
+        "title" : "Comprehensive Styleguide",
+        "desc" : "Patternlab helps developers and clients to design the building blocks of a site",
+        "image" : {
+          "sizes" : {
+            "medium" : "https://via.placeholder.com/350x250"
+          }
+        }
+      }
+    }
+  ]
+}

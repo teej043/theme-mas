@@ -1,0 +1,50 @@
+
+{
+	"title" : "Home Page",
+	"bodyClass": "home",
+  "modules" : [
+    {
+      "id" : "module001x",
+      "type" : "article",
+      "fields" : {
+        "content" : "<h1>This is the homepage</h1><p>Fusce fermentum. Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Morbi mollis tellus ac sapien. Quisque id mi. Proin pretium, leo ac pellentesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.</p>",
+        "block_id" : "article"
+      }
+    },
+    {
+      "id" : "module002x",
+      "type" : "featured",
+      "fields" : {
+        "items" : [
+          {
+            "title" : "Item 1",
+            "desc" : "Item 1 description texts",
+            "image" : {
+              "sizes" : {
+                "medium" : "https://via.placeholder.com/350x250"
+              }
+            }
+          },
+          {
+            "title" : "Item 2",
+            "desc" : "Item 2 description texts",
+            "image" : {
+              "sizes" : {
+                "medium" : "https://via.placeholder.com/350x250"
+              }
+            }
+          },
+          {
+            "title" : "Item 3",
+            "desc" : "Item 3 description texts",
+            "image" : {
+              "sizes" : {
+                "medium" : "https://via.placeholder.com/350x250"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
