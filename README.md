@@ -21,6 +21,8 @@ Steps to do first right after you clone this from the repo.
 
 `source/` is where sass, svg, and Patternlab specific files are located.
 
+`inc/` is some PHP files that handles the initialization of the theme are located. It is required by the `functions.php` of Wordpress. It handles anything about ACF, blocks and Custom Post Type setups.
+
 `static/` or `assets/` is where you can keep your static front-end scripts, styles, or images. It is also a place where transformed or generated files (from dynamic sources such as "sass" and "svg") are stored.
 
 `templates/` or `views/` contains all of your Twig templates. These pretty much correspond 1 to 1 with the PHP files that respond to the WordPress template hierarchy. At the end of each PHP template, you'll notice a `Timber::render()` function whose first parameter is the Twig file where that data (or `$context`) will be used. Just an FYI.
