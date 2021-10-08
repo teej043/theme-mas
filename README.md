@@ -54,6 +54,8 @@ which componentize the content, meaning you can build your site's content using 
 
 Right now Patternlab (views; twig files) and Assets Preprocessors (sass, svg) do not share the same build system; Patternlab has its own NPM task runner scripts while Assets uses Gulp task runner. It's a little bit of a convenience, but once we found a way to make the Gulp edition of Patternlab to work with Twig + Timber setup then we might someday be able to create task runners using Gulp alone. But for now, you need to open up two terminals:
 
+### Development
+
 1. To modify your views twig file open a terminal and enter `npm run start`
 2. To work on your stylesheet and icons assets open a new terminal and enter `gulp`
 
@@ -61,6 +63,27 @@ Right now Patternlab (views; twig files) and Assets Preprocessors (sass, svg) do
 
 1. Patternlab is configured to already have debug mode enabled.
 2. For Wordpress, you need to modify the "WP_DEBUG" to `true` on its wp_config.php file.
+
+### Building Patternlab
+
+To create a deployable instance of your Patternlab to any webhost just run `npm run build` on your terminal, the `public/` folder will be updated and is ready to be pushed or uploaded to a webhost.
+
+TODO:
+
+1. Create gulp task to deploy on Surge.sh for quick free site hosting upload.
+
+### Building Production for Wordpress
+
+TODO: 
+
+Running `gulp build --production` will set the environment to production mode making the build system to use optimizations on the transformed source files outputted to the `assets/` folder.
+
+
+## TODOS
+
+1. Gulp task to deploy on Surge.sh
+2. Gulp production mode
+3. Optimization: Gulp Critical CSS Path
 
 
 ## Other Resources
