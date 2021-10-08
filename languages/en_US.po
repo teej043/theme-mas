@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Manila Asian Store Theme\n"
 "POT-Creation-Date: 2021-10-08 16:31+0800\n"
-"PO-Revision-Date: 2021-10-08 16:32+0800\n"
+"PO-Revision-Date: 2021-10-08 16:31+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: da_DK\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,6 +21,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: public\n"
+"X-Poedit-SearchPathExcluded-3: tests\n"
 
 #: inc/blocks/article.php:7
 msgid "Article"
@@ -54,10 +56,6 @@ msgstr ""
 
 #: inc/blocks/teaser.php:8
 msgid "A block that represents a sneak preview of certain post or page."
-msgstr ""
-
-#: public/styleguide/js/patternlab-viewer.js:194
-msgid "iterator"
 msgstr ""
 
 #: views/base.twig:10
