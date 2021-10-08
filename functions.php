@@ -172,38 +172,10 @@ class StarterSite extends Timber\Site {
 
 new StarterSite();
 
-
 /**
- * SETS UP ACF BLOCKS
+ * LOAD ACF FUNCTIONS
  */
-
-add_action( 'acf/init', 'mas_acf_init' );
-
-function mas_acf_init() {
-    // Bail out if function doesn’t exist.
-    if ( ! function_exists( 'acf_register_block' ) ) {
-        return;
-    }
-
-		include 'inc/blocks/article.php';
-		include 'inc/blocks/featured.php';
-		include 'inc/blocks/hero.php';
-		include 'inc/blocks/teaser.php';
-}
-
-
-function mas_allowed_block_types( $allowed_blocks ) {
-	return array(
-		//'core/image',
-    'acf/article',
-    'acf/featured',
-		'acf/hero',
-		'acf/teaser',
-    'core/block',
-    //'acf/relateditems',
-	);
-}
-add_filter( 'allowed_block_types_all', 'mas_allowed_block_types' );
+require get_template_directory() . '/inc/acf/setup.php';
 
 
 /**
