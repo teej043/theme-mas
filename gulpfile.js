@@ -12,14 +12,16 @@ function buildStyles() {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./assets/css/') );
+    .pipe(gulp.dest('./assets/css/')) // for Wordpress
+    .pipe(gulp.dest('./source/css/')); // for Patternlab
 };
 
 function buildScripts() {
   return gulp.src('./source/js/**/*.js', {base: 'source/js'})
     .pipe( uglify() )
     .pipe(rename({suffix: ".min"}))
-    .pipe( gulp.dest('./assets/js/') )
+    .pipe( gulp.dest('./assets/js/')) // for Wordpress
+    
     //.pipe( browserSync.reload( {stream:true} ) )
     // .pipe(notify({ message: 'Sass task complete' }));
 };
