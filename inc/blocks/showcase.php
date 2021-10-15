@@ -50,8 +50,10 @@
         )
       ),
       'enqueue_assets' => function(){
+        wp_enqueue_script( 'splidejs', get_template_directory_uri() . '/assets/js/vendors/splide.min.js', array(), '', true );
+        wp_enqueue_style( 'splidecss', get_template_directory_uri() . '/assets/css/vendors/splide/splide-core.css' );
+        wp_enqueue_script( 'block-showcase-js', get_template_directory_uri() . '/assets/js/blocks/showcase.min.js', array('splidejs'), '', true );
         wp_enqueue_style( 'block-showcase', get_template_directory_uri() . '/assets/css/blocks/showcase.css' );
-        //wp_enqueue_script( 'block-article', get_template_directory_uri() . '/template-parts/blocks/testimonial/testimonial.js', array('jquery'), '', true );
       },
   ) );
 

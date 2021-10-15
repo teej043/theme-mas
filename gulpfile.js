@@ -2,7 +2,10 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
+
+const rename = require('gulp-rename');
 
 function buildStyles() {
   return gulp.src('./source/**/*.scss', {base: 'source/sass'})
@@ -12,8 +15,19 @@ function buildStyles() {
     .pipe(gulp.dest('./assets/css/') );
 };
 
+function buildScripts() {
+  return gulp.src('./source/js/**/*.js', {base: 'source/js'})
+    .pipe( uglify() )
+    .pipe(rename({suffix: ".min"}))
+    .pipe( gulp.dest('./assets/js/') )
+    //.pipe( browserSync.reload( {stream:true} ) )
+    // .pipe(notify({ message: 'Sass task complete' }));
+};
+
 exports.buildStyles = buildStyles;
+exports.buildScripts = buildScripts;
 
 exports.watch = function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./source/sass/**/*.scss', buildStyles);
+  gulp.watch('./source/js/**/*.js', buildScripts);
 };
