@@ -1,11 +1,63 @@
 
-# The Manila Asian Store Theme
+# Boilerplate Custom Theme
 
 This theme is using Timber, Twig, ACF Blocks and Patternlab. It also meant to be a permanent theme for the site as soon as the site uses the blocks that these theme provides.
+
+## Requirements
+
+### Technology Stack
+
+##### Server:
+
+PHP 7.4 or greater
+MySQL 5.6 or greater OR MariaDB 10.1 or greater
+Nginx or Apache with mod_rewrite module
+HTTPS support
+
+##### Development:
+
+Wordpress - A very popular PHP based Content Management System, it is the primary platform of the solution.
+
+NodeJS - Brings along NPM which is a package manager, and an environment for creating automation of tasks using GulpJS.
+
+Composer - A PHP based package manager. Used to install Timber and probably other dependencies.
+
+GIT - A version control system, allows to track changes on the source code from a collaborative development team.
+
+GulpJS - A task runner for creating a system of processes for automation, optimization and deployments. The build system tasks will be discussed in later section.
+
+Timber - Timber enables Wordpress to use Twig files, it is a great tool to turn Wordpress templating workflow into a setup similar to Model-View-Controller; it separates handling of logic, data away from the rendering of displays which will dramatically improve maintanability and scalability of the development, and promotes manageability among collaborators. Timber is installed using Composer.
+
+Twig - The PHP Templating Engine.
+
+Patternlab - A self generating automated styleguide static site, used for when showcasing or discussing ui design patterns with the client and collaborators. Works hand in hand with Timber to integrate with Wordpress.
+
+### Wordpress Plugins
+
+Essential Wordpress plugins are required to work hand in hand with the Theme.
+
+`advanced-custom-field` Advanced Custom Field PRO is primarily the most important plugin, it gives power to the CMS to create custom data.
+
+`crop-thumbnails` A tried and tested cropper tool for Wordpress image uploads.
+
+There are also utility or situational plugins that may be used but can be safely removed.
+
+`wordpress-importer` A standard plugin for exporting and importing existing content.
+
+Specific site functionality plugins will be added here...
+
+
+### Frontend Vendor Librarires
+
+Some vendor libraries will be used, but most of them will be determined per project basis, but the most common starter libraries will be listed here:
+
+`splidejs` A powerful lightweight slider library, with no js framework dependencies.
+
 
 ## Further Development Installation Guide
 
 Make sure to clone this onto your themes folder, the folder and text domain by default is "mas", should you want to rename this to anything else just search and replace instances of "mas".
+
 
 ### Prerequisites
 
