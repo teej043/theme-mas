@@ -5,8 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+
+    <!-- Add all our componentized styles (Modular instead of a monolithic file) -->
+    <!-- Begin Stylesheet Files -->
+    <link rel="stylesheet" href="../../css/base.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="../../css/vendors/splide/splide-core.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="../../css/blocks/article.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="../../css/blocks/hero.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="../../css/blocks/featured.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="../../css/blocks/teaser.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="../../css/blocks/showcase.min.css?{{ cacheBuster }}" type="text/css" media="all" />
+    <!-- End Stylesheet Files -->
     
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     {{ patternLabHead | raw }}
