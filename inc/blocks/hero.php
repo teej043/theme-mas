@@ -23,7 +23,7 @@
         )
       ),
       'enqueue_assets' => function(){
-        wp_enqueue_style( 'block-hero', get_template_directory_uri() . '/assets/css/blocks/hero.css' );
+        wp_enqueue_style( 'block-hero', get_template_directory_uri() . '/assets/css/blocks/hero.min.css' );
         //wp_enqueue_script( 'block-article', get_template_directory_uri() . '/template-parts/blocks/testimonial/testimonial.js', array('jquery'), '', true );
       },
   ) );

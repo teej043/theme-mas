@@ -48,7 +48,7 @@
         )
       ),
       'enqueue_assets' => function(){
-        wp_enqueue_style( 'block-featured', get_template_directory_uri() . '/assets/css/blocks/featured.css' );
+        wp_enqueue_style( 'block-featured', get_template_directory_uri() . '/assets/css/blocks/featured.min.css' );
         //wp_enqueue_script( 'block-article', get_template_directory_uri() . '/template-parts/blocks/testimonial/testimonial.js', array('jquery'), '', true );
       },
   ) );

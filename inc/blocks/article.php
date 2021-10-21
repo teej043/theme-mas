@@ -20,11 +20,12 @@
         )
       ),
       'enqueue_assets' => function(){
-        wp_enqueue_style( 'block-article', get_template_directory_uri() . '/assets/css/blocks/article.css' );
+        wp_enqueue_style( 'block-article', get_template_directory_uri() . '/assets/css/blocks/article.min.css' );
         //wp_enqueue_script( 'block-article', get_template_directory_uri() . '/template-parts/blocks/testimonial/testimonial.js', array('jquery'), '', true );
       },
   ) );
 
+  
   /**
    *  This is the callback that displays the block.
    *
@@ -42,10 +43,8 @@
     $context['is_preview'] = $is_preview;
 
    
-
     // Render the block.
     Timber::render( 'views/_patterns/blocks/article/article.twig', $context );
-
 
   }
 
