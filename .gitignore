@@ -2,6 +2,7 @@ vendor
 wp-content
 node_modules
 pattern_exports
+source/css
 public
 tests
 composer.lock
