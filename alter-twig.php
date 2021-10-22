@@ -20,6 +20,14 @@ function addCustomExtension(\Twig_Environment &$env, $config) {
     return $str;
   }));
 
+  $env->addFunction(new \Twig_SimpleFunction('_e', function ($str, $domain) {
+    return $str;
+  }));
+ 
+  $env->addFunction(new \Twig_SimpleFunction('fn', function ($str) {
+    return $str;
+  }));
+
   /*
    * Reverse a string
    * @param string $theString

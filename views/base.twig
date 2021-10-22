@@ -15,7 +15,7 @@
 						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
 					</h1>
 					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "views/_patterns/components/navigations/mainmenu.twig" %}
+						{% include "views/partials/components/navigations/mainmenu.twig" %}
 					</nav><!-- #nav -->
 				</div>
 			{% endblock %}
@@ -39,7 +39,7 @@
 			<footer id="footer">
 				{% include 'footer.twig' %}
 			</footer>
-			{{ function('wp_footer') }}
+			{{ fn('wp_footer') }}
 		{% endblock %}
 	</body>
 	

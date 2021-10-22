@@ -74,7 +74,7 @@
     $context['is_preview'] = $is_preview;
 
     // Render the block.
-    Timber::render( 'views/_patterns/blocks/showcase/showcase.twig', $context );
+    Timber::render( 'views/partials/blocks/showcase/showcase.twig', $context );
 
 
   }

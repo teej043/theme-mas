@@ -1,0 +1,14 @@
+{
+  "prod" : {
+    "site" : {
+      "url" : "http://manilaasianstore.local",
+      "stylesheet_uri" : "http://manilaasianstore.local/wp-content/themes/mas/"
+    }
+  },
+  "local" : {
+    "site" : {
+      "url" : "http://manilaasianstore.local",
+      "stylesheet_uri" : "http://manilaasianstore.local/wp-content/themes/mas/"
+    }
+  }
+}

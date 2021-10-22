@@ -192,12 +192,46 @@ add_filter( 'wp_get_nav_menu_items', 'prefix_nav_menu_classes', 10, 3 );
 
 
 
-
+/**
+ * Create namespacing for patternlab patterns paths
+ */
 add_filter('timber/loader/loader', function($loader){
-	$loader->addPath(__DIR__ . "/views/_patterns/components", "components");
-	$loader->addPath(__DIR__ . "/views/_patterns/blocks", "blocks");
-	$loader->addPath(__DIR__ . "/views/_patterns/elements", "elements");
-	$loader->addPath(__DIR__ . "/views/_patterns/templates", "templates");
-	$loader->addPath(__DIR__ . "/views/_patterns/pages", "pages");
+	$loader->addPath(__DIR__ . "/views/partials/components", "components");
+	$loader->addPath(__DIR__ . "/views/partials/blocks", "blocks");
+	$loader->addPath(__DIR__ . "/views/partials/elements", "elements");
+	$loader->addPath(__DIR__ . "/views/partials/templates", "templates");
+	$loader->addPath(__DIR__ . "/views/partials/pages", "pages");
 	return $loader;
 });
+
+
+
+ /**
+ * CRITICAL CSSS
+ */
+
+function get_include_contents($filename) {
+  if (is_file($filename)) {
+      ob_start();
+      include $filename;
+      return ob_get_clean();
+  }
+  return false;
+}
+
+
+function inline_critical_css() {
+	$string = get_include_contents( get_template_directory() . '/assets/css/critical/critical.css' );
+	echo '<style type="style/css">'.str_replace('url(..', 'url(' . get_template_directory_uri() . '/assets', $string).'</style>'. "\n";
+}
+add_action( 'wp_enqueue_scripts', 'inline_critical_css' );
+
+function mas_enqueue_assets() {
+  wp_enqueue_style('base', get_template_directory_uri() . '/assets/css/base.min.css' );
+}
+add_action( 'wp_enqueue_scripts', 'mas_enqueue_assets' );
+
+
+// Gutenberg custom stylesheet
+add_theme_support('editor-styles');
+add_editor_style( get_template_directory_uri() . '/assets/css/base.min.css' );

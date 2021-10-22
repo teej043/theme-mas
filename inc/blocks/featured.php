@@ -81,7 +81,7 @@
     $context['is_preview'] = $is_preview;
 
     // Render the block.
-    Timber::render( 'views/_patterns/blocks/featured/featured.twig', $context );
+    Timber::render( 'views/partials/blocks/featured/featured.twig', $context );
 
 
   }

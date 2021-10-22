@@ -44,7 +44,7 @@
 
    
     // Render the block.
-    Timber::render( 'views/_patterns/blocks/article/article.twig', $context );
+    Timber::render( 'views/partials/blocks/article/article.twig', $context );
 
   }
 

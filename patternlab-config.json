@@ -43,7 +43,7 @@
   "paths": {
     "source": {
       "root": "./source/",
-      "patterns": "./views/_patterns/",
+      "patterns": "./views/partials/",
       "data": "./source/_data/",
       "meta": "./source/_meta/",
       "annotations": "./source/_annotations/",
@@ -121,35 +121,35 @@
           "id": "elements",
           "recursive": true,
           "paths": [
-            "./views/_patterns/elements"
+            "./views/partials/elements"
           ]
         },
         {
           "id": "components",
           "recursive": true,
           "paths": [
-            "./views/_patterns/components"
+            "./views/partials/components"
           ]
         },
         {
           "id": "blocks",
           "recursive": true,
           "paths": [
-            "./views/_patterns/blocks"
+            "./views/partials/blocks"
           ]
         },
         {
           "id": "templates",
           "recursive": true,
           "paths": [
-            "./views/_patterns/templates"
+            "./views/partials/templates"
           ]
         },
         {
           "id": "pages",
           "recursive": true,
           "paths": [
-            "./views/_patterns/pages"
+            "./views/partials/pages"
           ]
         }
       ],

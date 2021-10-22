@@ -45,7 +45,7 @@
     $context['is_preview'] = $is_preview;
 
     // Render the block.
-    Timber::render( 'views/_patterns/blocks/hero/hero.twig', $context );
+    Timber::render( 'views/partials/blocks/hero/hero.twig', $context );
 
 
   }
