@@ -17,7 +17,7 @@
     "start": "npm run serve",
     "version": "patternlab --version",
     "patternlab": "patternlab",
-    "gulp" : "gulp -- "
+    "gulp": "gulp -- "
   },
   "keywords": [],
   "author": "",
@@ -29,15 +29,27 @@
     "@pattern-lab/uikit-workshop": "^5.15.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.27.5",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-merge-css": "^1.0.2",
+    "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.3",
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-string-replace": "^1.1.2",
     "gulp-uglify": "^3.0.2",
-    "minimist": "^1.2.5",
-    "sass": "^1.42.1"
+    "postcss-critical-split": "^2.5.3",
+    "sass": "^1.42.1",
+    "yargs": "^17.2.1"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "browserslist": [
+    "> 5%",
+    "IE 11"
+  ]
 }

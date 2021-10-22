@@ -1,0 +1,5 @@
+.extra {
+  /* This will be retained */
+  position: relative;
+  display: none;
+}

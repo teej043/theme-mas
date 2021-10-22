@@ -1,26 +1,41 @@
 'use strict';
 
+const config = require('./config.json');
+
 const gulp = require('gulp');
+const replace = require('gulp-string-replace');
 const sass = require('gulp-sass')(require('sass'));
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const cleanCSS = require('gulp-clean-css');
+const mergeCSS = require('gulp-merge-css');
+const autoprefixer = require('gulp-autoprefixer');
+const postcssCriticalSplit = require('postcss-critical-split');
 
-const argv = require('minimist')(process.argv.slice(2));
+//const argv = require('minimist')(process.argv.slice(2));
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const argv = yargs(hideBin(process.argv)).argv;
 
 const rename = require('gulp-rename');
+
+const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
 
 /******************************************************
  * PATTERN LAB  NODE WRAPPER TASKS with core library
  ******************************************************/
-const config = require('./patternlab-config.json');
-const patternlab = require('@pattern-lab/core')(config);
+const pl_config = require('./patternlab-config.json');
+const patternlab = require('@pattern-lab/core')(pl_config);
+
 
 
 function build() {
   return patternlab
     .build({
       watch: argv.watch,
-      cleanPublic: config.cleanPublic,
+      cleanPublic: pl_config.cleanPublic,
     })
     .then(() => {
       // do something else when this promise resolves
@@ -30,7 +45,7 @@ function build() {
 function serve() {
   return patternlab.server
     .serve({
-      cleanPublic: config.cleanPublic,
+      cleanPublic: pl_config.cleanPublic,
       watch: true,
     })
     .then(() => {
@@ -43,7 +58,7 @@ function patternlabVer() {
 }
 
 function patternlabPatternsOnly() {
-  patternlab.patternsonly(config.cleanPublic);
+  patternlab.patternsonly(pl_config.cleanPublic);
 }
 
 function patternlabListStarterKits() {
@@ -55,9 +70,11 @@ function patternlabLoadStartKit() {
 }
 
 function patternlabBuild() {
+
   return build().then(() => {
-    // do something else when this promise resolves
+    browserSync.reload();
   });
+
 }
 
 function patternlabServe() {
@@ -75,8 +92,8 @@ function buildStyles() {
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest('./source/css/')) // for Patternlab
     .pipe(gulp.dest('./assets/css/')) // for Wordpress
-    .pipe(gulp.dest('./source/css/')); // for Patternlab
 };
 
 function buildPatternlabStyles() {
@@ -85,7 +102,7 @@ function buildPatternlabStyles() {
     .pipe(sass().on('error', sass.logError))
     //.pipe(sourcemaps.write())
     .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest('./public/styleguide/css/')); // for Patternlab
+    .pipe(gulp.dest('./public/styleguide/css/')); // for Patternlab UI only
 };
 
 function buildScripts() {
@@ -100,6 +117,39 @@ function buildScripts() {
 
 
 
+/**
+ * CRITICAL CSS
+ */
+
+
+ function critical() {
+  return gulp.src(['./assets/css/**/*.css','!**/*-critical.css','!**/critical.css'])
+  //.pipe(replace(/url\(\.\./g, 'url('+ config.local.site.stylesheet_uri +''))
+  .pipe(replace(/url*\(.../g, "url("+ config.local.site.stylesheet_uri + "assets"))
+	.pipe(postcss([
+    postcssCriticalSplit({
+    })
+  ]))
+  .pipe(mergeCSS({ name: 'critical.css' }))
+  .pipe( autoprefixer( {
+    cascade: true
+  }))
+  .pipe(cleanCSS())
+  .pipe(gulp.dest('./assets/css/critical'));
+}
+
+function criticalSplit() {
+  return gulp.src(['./assets/css/**/*.css','!./assets/css/critical','!**/*-critical.css','!**/critical.css'])
+	.pipe(postcss([
+    postcssCriticalSplit({
+      'output' : 'rest'
+    })
+  ]))
+  .pipe(gulp.dest('./assets/css'));
+}
+
+
+
 exports.buildStyles = buildStyles;
 exports.buildPatternlabStyles = buildPatternlabStyles;
 exports.buildScripts = buildScripts;
@@ -111,7 +161,28 @@ exports.patternlabLoadStartKit = patternlabLoadStartKit;
 exports.patternlabBuild = patternlabBuild;
 exports.patternlabServe = patternlabServe;
 
+exports.critical = critical;
+exports.criticalSplit = criticalSplit;
+exports.criticalCSS = gulp.series(buildStyles, critical, criticalSplit);
+
 exports.watch = function () {
-  gulp.watch('./source/sass/**/*.scss', buildStyles);
-  gulp.watch('./source/js/**/*.js', buildScripts);
+
+  browserSync.init({
+    server: {
+      baseDir: './public/'
+    },
+    open: true,
+    ghostMode: false
+  });
+
+  gulp.watch('./source/sass/**/*.scss', buildStyles).on("change", browserSync.reload);
+  gulp.watch('./source/js/**/*.js', buildScripts).on("change", browserSync.reload);
+  gulp.watch('./views/**/*.twig', patternlabBuild);
 };
+
+
+
+
+
+
+
